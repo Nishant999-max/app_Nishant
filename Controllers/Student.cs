@@ -55,7 +55,8 @@ namespace app.Controllers
         public Student Put(Student student)
         {
             Student updatedStudent = Students.Single(x => x.Id == student.Id);
-            updatedStudent = student;
+            updatedStudent.Name = student.Name;
+            updatedStudent.age = student.age;
             return student;
         }
     }
