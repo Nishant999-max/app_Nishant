@@ -44,5 +44,12 @@ namespace app.Controllers
             Student student = Session.Get<Student>(id);
             return student;
         }
+        [HttpPost]
+        public ActionResult<Book> Post(Book book)
+        {
+            student.Id = Students.Select(x=>x.Id).Max + 1;
+            Students.Add(student);
+            return student;
+        }
     }
 }
