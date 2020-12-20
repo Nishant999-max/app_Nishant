@@ -51,5 +51,12 @@ namespace app.Controllers
             Students.Add(student);
             return student;
         }
+        [HttpPut]
+        public Student Put(Student student)
+        {
+            Student updatedStudent = Students.Single(x => x.Id == student.Id);
+            updatedStudent = student;
+            return student;
+        }
     }
 }
