@@ -59,5 +59,11 @@ namespace app.Controllers
             updatedStudent.age = student.age;
             return student;
         }
+        [HttpDelete]
+        public long Delete(long id){
+            Book deletedBook = Books.Single(x=>x.Id == id);
+            Books.Remove(deletedBook);
+            return id;
+        }
     }
 }
