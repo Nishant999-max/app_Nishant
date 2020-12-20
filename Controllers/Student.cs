@@ -33,9 +33,16 @@ namespace app.Controllers
        
 
         [HttpGet]
-        public List<Sudent> Get()
+        public List<Student> Get()
         { 
             return Students; 
+        }
+
+        [HttpGet("{id}")]
+        public ActionResult<Student> GetStudent(long id)
+        {
+            Student student = Session.Get<Student>(id);
+            return student;
         }
     }
 }
